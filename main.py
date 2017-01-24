@@ -94,7 +94,7 @@ class CrossOffMovie(webapp2.RequestHandler):
                 old_movie = self.request.get("old-movie")
 
                 # build response content
-                old_movie_element = "<strong>" + old_movie + "</strong>"
+                old_movie_element = "<strike><strong>" + old_movie + "</strike></strong>"
                 sentence = old_movie_element + " has been crossed off your Watchlist!"
 
                 content = page_header + "<p>" + sentence + "</p>" + page_footer
