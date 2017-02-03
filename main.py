@@ -54,10 +54,13 @@ class AddMovie(webapp2.RequestHandler):
         # 'escape' the user's input so that if they typed HTML, it doesn't mess up our site
         new_movie_escaped = cgi.escape(new_movie, quote=True)
 
-        # TODO 1
+        
         # Use a template to render the confirmation message
 
-        self.response.write("Under construction...")
+        t = jinja_env.get_template("add.html")
+        content = t.render(new_movie=new_movie_escaped)
+        self.response.write(content)
+
 
 
 class CrossOffMovie(webapp2.RequestHandler):
